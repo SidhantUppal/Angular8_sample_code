@@ -1,0 +1,47 @@
+[
+  {
+    "fieldGroupClassName": "row ",
+    "fieldGroup": [
+      {
+        "className": "col-sm-12 ig-heading-3",
+        "template": "Section Title"
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row ",
+    "fieldGroup": [
+      {
+        "className": "col-sm-12 ",
+        "key": "applicationRoleID",
+        "type": "AutoText",
+        "templateOptions": {
+          "label": "Application Role",
+          "required": true,
+          "maxSelectedItems": 1,
+          "autoTextCode": "InternalApplicationRole"
+        },
+
+        "validation": {
+          "messages": {
+            "required": "Please enter Application Role"
+
+          }
+        }
+
+      },
+      {
+        "className": "col-sm-12 ",
+        "key": "access",
+        "type": "Access",
+        "templateOptions": {
+          "required": false
+        },
+
+        "validation": {
+        }
+
+      }
+    ]
+  }
+]

@@ -1,0 +1,189 @@
+
+<div class="container-fluid menu-body">
+  <div class="row ">
+
+    <div class="col-md-4"> </div>
+
+    <div class="col-md-4 " style="margin-top:30vh; ">
+      
+      <div class="row ">
+        <div class="col-md-2"> </div>
+        <div class="col-md-8 login-container">
+
+          <form [formGroup]="this.formGroup" class="needs-validation " novalidate
+                (validSubmit)="this.Login()">
+
+            <div class="form-row" *ngIf="ErrorMessage!='' && !ResetPasswordVisible">
+
+              <div class="col-md-12 form-group">
+                <span class="invalid-feedback" style="display: block !important;">{{ErrorMessage}}</span>
+
+
+              </div>
+            </div>
+
+            <div *ngIf="ForgotPasswordToken==null && !IsChangingPassword">
+
+              <div class="form-row">
+
+                <div class="col-md-12 form-group">
+                  <label class="login-label" for="validationCustomUsername">Email</label>
+                  <input class="form-control"
+                         formControlName="email"
+                         type="email"
+                         id="validationCustomUsername"
+                         placeholder="Email">
+
+
+                </div>
+              </div>
+              <div class="form-row" *ngIf="!ResetPasswordVisible">
+                <div class="col-md-12 form-group">
+
+                  <label class="login-label" for="password">Password</label>
+                  <input class="form-control" type="password"
+                         formControlName="password"
+                         required
+                         id="password"
+                         placeholder="Password">
+
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-2 "></div>
+                <div class="col-md-8 ">
+
+                  <button class="btn btn-primary cta-login-btn-second" type="button"
+                          *ngIf="!ResetPasswordVisible"
+                          (click)="ShowResetPasswordPanel(true)">
+                    Reset Password
+                  </button>
+
+
+
+
+                  <button *ngIf="!ResetPasswordVisible"
+                          class="btn btn-primary cta-login-btn-main" type="submit">
+                    Login
+                  </button>
+
+                  <button class="btn btn-primary " type="button"
+                          *ngIf="ResetPasswordVisible"
+                          (click)="ShowResetPasswordPanel(false)">
+                    Back
+                  </button>
+                  &nbsp;
+                  <button *ngIf="ResetPasswordVisible"
+                          class="btn btn-primary" type="submit">
+                    Reset Password
+                  </button>
+
+                </div>
+                <div class="col-md-2 text-center"></div>
+              </div>
+            </div>
+            <div *ngIf="ForgotPasswordToken!=null && !IsChangingPassword">
+
+
+              <div class="form-row">
+                <div class="col-md-12 form-group">
+
+                  <label class="login-label" for="password">Password</label>
+                  <input class="form-control" type="password"
+                         formControlName="password"
+                         required
+                         id="password"
+                         placeholder="Password">
+
+                </div>
+
+              </div>
+              <div class="form-row">
+                <div class="col-md-12 form-group" [ngClass]="{'has-error':this.formGroup.controls.confirmpassword.errors!=null}">
+
+                  <label class="login-label" for="password">Confirm password</label>
+                  <input class="form-control" type="password"
+                         formControlName="confirmpassword"
+                         required
+                         id="confirmpassword"
+                         placeholder="Confirm Password"
+                         [ngClass]="{'is-invalid':this.formGroup.controls.confirmpassword.errors!=null}">
+                  <div class="invalid-feedback"
+                       *ngIf="this.formGroup.controls.confirmpassword.errors!=null &&
+                                this.formGroup.controls.confirmpassword.errors.notSame!=null">
+                    {{this.formGroup.controls.confirmpassword.errors.notSame}}
+                  </div>
+
+                </div>
+
+              </div>
+              <button class="btn btn-primary" type="submit">
+                Reset
+              </button>
+
+            </div>
+
+            <div *ngIf="IsChangingPassword">
+
+              <div class="form-row">
+                <div class="col-md-12 form-group">
+
+                  <label class="login-label" for="password">Current Password</label>
+                  <input class="form-control" type="password"
+                         formControlName="currentpassword"
+                         id="currentpassword"
+                         placeholder="Current Password">
+
+                </div>
+
+              </div>
+              <div class="form-row">
+                <div class="col-md-12 form-group">
+
+                  <label class="login-label" for="password">Password</label>
+                  <input class="form-control" type="password"
+                         formControlName="password"
+                         id="password"
+                         placeholder="Password">
+
+                </div>
+
+              </div>
+              <div class="form-row">
+                <div class="col-md-12 form-group" [ngClass]="{'has-error':this.formGroup.controls.confirmpassword.errors!=null}">
+
+                  <label class="login-label" for="password">Confirm password</label>
+                  <input class="form-control" type="password"
+                         formControlName="confirmpassword"
+                         id="confirmpassword"
+                         placeholder="Confirm Password"
+                         [ngClass]="{'is-invalid':this.formGroup.controls.confirmpassword.errors!=null}">
+                  <div class="invalid-feedback"
+                       *ngIf="this.formGroup.controls.confirmpassword.errors!=null &&
+                           this.formGroup.controls.confirmpassword.errors.notSame!=null">
+                    {{this.formGroup.controls.confirmpassword.errors.notSame}}
+                  </div>
+
+                </div>
+
+              </div>
+              <button class="btn btn-primary" type="submit">
+                Change Password
+              </button>
+
+            </div>
+          </form>
+        </div>
+        <div class="col-md-2"> </div>
+
+
+      </div>
+    </div>
+
+    <div class="col-md-4"> </div>
+
+  </div>
+
+</div>

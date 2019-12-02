@@ -1,0 +1,69 @@
+<div class="text-center" style="  "
+     *ngIf="IsVisible"
+     >
+
+
+  <div class="row ig-breadcrumb-background">
+
+    <div class="col-2 text-center">
+      <button type="button" routerLink="/" class="btn ig-btn-breadcrumb">
+        <i class="fas fa-home"></i>
+
+      </button>
+
+      <button type="button" routerLink="/" class="btn ig-btn-breadcrumb">
+        <i class="fas fa-bars"></i>
+
+      </button>
+
+
+    </div>
+
+    <div class="col-8 text-center ig-breadcrumb-heading" > Client Funds Management </div>
+    <div class="col-2"> </div>
+
+
+  </div>
+
+  <div class="menu">
+
+    
+
+    <!--<div class=" hidden" >
+      
+      <button type="button" routerLink="{{item.url}}"
+              *ngFor="let item of AllowedItems;index as i"
+              class="btn btn-primary cc-side-btn">
+        <i [ngClass]="item.icon"></i>   {{item.label}}
+      </button>
+      
+       
+
+      </div>-->
+    </div>
+
+  
+</div>
+
+
+<!--
+<ul class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <ng-container *ngFor="let breadcrumb of Crumbs">
+    <li   *ngIf="breadcrumb!=null && breadcrumb.label!=''"
+    >
+      <a [routerLink]="breadcrumb.url"   *ngIf="breadcrumb.url!=''">
+        {{ breadcrumb.label
+      }}
+      </a>
+      <span *ngIf="breadcrumb.url==''">
+        {{ breadcrumb.label}}
+      </span>
+      </li>
+      </ng-container>
+
+      </ul>
+
+
+
+      -->

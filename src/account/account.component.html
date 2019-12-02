@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class='row'>
+    <div class="col-sm-12">
+      <div class="ig-card">
+        <form [formGroup]="this.formGroup" class="needs-validation " novalidate>
+          <formly-form [form]="this.formGroup"
+                       [fields]="formFields"
+                       [model]="formModel"
+                       (modelChange)="modelChange($event)">
+          </formly-form>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='row'>
+    <div class="col-sm-12">
+      <div class="ig-card">
+        <div class="col-sm-10 text-left" style="padding-bottom: 10px; padding-left: 0;" *ngIf="GlobalSettings.IsAdminUser">
+          <button type="button" class="btn btn-primary cc-toolbar-btn" *ngIf="AllowAdd" (click)="AddEditAccount(null,true)">
+            <i class="fas fa-plus"></i> Account
+          </button>
+        </div>
+        <div class="col-sm-12 fade-d0" style="padding: 0; ">
+          <app-grid [ColumnDefinitions]="columnDefinitions"
+                    [GridOptions]="gridOptions"
+                    [GridSettings]="gridSettings"
+                    [DataSource]="dataSource"
+                    [GridParams]="gridParams"
+                    (onCellClicked)="onCellClicked($event)">
+          </app-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

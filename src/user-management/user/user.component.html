@@ -1,0 +1,65 @@
+<div class="container-fluid" style=" padding:0; margin-top:20px;">
+
+
+  <div class="row ig-toolbar">
+
+
+    <div class="col-sm-1 " style="padding: 0;">
+      <p class="cc-section-title">USERS</p>
+    </div>
+
+    <div class="col-sm-1 text-left" style="padding: 0;">
+      <button type="button" class="btn btn-primary cc-toolbar-btn" (click)="AddUser(null, true)">
+        <i class="fas fa-plus"></i> User
+      </button>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class='row'>
+      <div class="col-sm-12">
+        <div class="ig-card">
+          <form [formGroup]="this.formGroup" class="needs-validation " novalidate>
+            <formly-form [form]="this.formGroup" [fields]="formFields" [model]="formModel"
+                         (modelChange)="modelChange($event)">
+            </formly-form>
+          </form>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+
+    <!-- <div class="container-fluid"> -->
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="ig-card ig-grid">
+          <app-grid [ColumnDefinitions]="columnDefinitions" [GridOptions]="gridOptions" [GridSettings]="gridSettings"
+                    [DataSource]="dataSource" [GridParams]="gridParams" [GridHeight]="346" (onCellClicked)="onCellClicked($event)">
+          </app-grid>
+        </div>
+      </div>
+
+
+
+      <div class="col-sm-4" *ngIf="SelectedUser!=null">
+        <div class="ig-card ig-grid">
+          <app-user-data-access [(CurrentSearchParams)]="CurrentSearchParams"></app-user-data-access>
+        </div>
+      </div>
+
+      <div class="col-sm-4" *ngIf="SelectedUser==null">
+        <div class="ig-card ig-grid">
+          <div style="height:316px; padding-top: 80px !important;" class="  ig-section">
+            <h5 class="text-center">  <i class="fas fa-arrow-left"></i> <br /> Select User from Grid <br /> for Client/Home Access Details </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>

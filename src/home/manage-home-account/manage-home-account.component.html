@@ -1,0 +1,16 @@
+
+<div class='row'>
+  <div class="col-sm-12">
+    <div class="ig-card">
+      <div class="col-sm-12">
+        <app-grid [ColumnDefinitions]="columnDefinitions"
+                  [GridOptions]="gridOptions"
+                  [GridSettings]="gridSettings"
+                  [DataSource]="dataSource"
+                  [GridParams]="gridParams"
+                  (onCellClicked)="onCellClicked($event)">
+        </app-grid>
+      </div>
+    </div>
+  </div>
+</div>

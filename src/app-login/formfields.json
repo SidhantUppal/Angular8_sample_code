@@ -1,0 +1,37 @@
+[
+  {
+    "key": "loginName",
+    "type": "input",
+    "templateOptions": {
+      "label": "Username",
+      "required": true
+    },
+    "validation": {
+      "messages": {
+
+        "required": "Please provide Username."
+      }
+
+
+    }
+
+
+  },
+  {
+    "key": "password",
+    "type": "input",
+    "templateOptions": {
+      "label": "Password",
+      "required": true,
+      "type": "password"
+    },
+    "validation": {
+      "messages": {
+
+        "required": "Please provide password."
+      }
+
+    },
+    "hideExpression": "model.ForgotPasswordVisible"
+  }
+]

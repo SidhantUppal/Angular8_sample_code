@@ -1,0 +1,57 @@
+
+<div class="container-fluid">
+  <div class="row ig-toolbar">
+    <div class="col-sm-4 " style="padding: 0;">
+      <p class="cc-section-title">HOME MAINTENANCE - {{ this.title }}</p>
+    </div>
+    <div class="col-sm-2 " style="padding: 0;">
+      <button type="button" class="btn btn-primary cc-toolbar-btn" (click)="Save()">
+        Save
+      </button>
+      <button type="button" class="btn btn-primary cc-toolbar-btn" (click)="NavigateBack()">
+        Back
+      </button>
+    </div>
+  </div>
+
+
+</div>
+<div class="container">
+
+  <div class='row' *ngIf="UIReady" >
+    <div class="col-sm-12">
+      <div class="ig-card">
+        <div class="col-sm-12">
+
+          <form [formGroup]="this.formGroup" class="needs-validation" *ngIf="UIReady" novalidate>
+            <formly-form [form]="this.formGroup" [fields]="formFields" [model]="this.formModel"
+                         (modelChange)="modelChange($event)">
+            </formly-form>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-12 fade-d0" style="padding: 0;" *ngIf="this.SelectedHome!=null">
+     
+    <!-- <app-manage-home-account [(HomeID)]="HomeID"></app-manage-home-account> -->
+    <app-account [ShowFilters]=false
+                 [EntityType]="EnityType"
+                 [EntityID]="this.SelectedHome.gLEntityID">
+    </app-account>
+  </div>
+   
+
+  <div class='row' >
+    <div class="col-sm-12">
+      <div class="ig-card">
+
+        <div class="col-sm-12 fade-d0" style="padding: 0;" *ngIf="HomeID!=null">
+          <app-manage-client-assignment [EntityType]="EnityType" [SourceEntityID]="HomeID"></app-manage-client-assignment>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

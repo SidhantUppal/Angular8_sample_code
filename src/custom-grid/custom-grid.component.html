@@ -1,0 +1,12 @@
+<div class="gridwidth" id="{{GridID}}Wrap" *ngIf="_customcolumnDefinitions!=null && _customgridOptions!=null">
+
+  <angular-slickgrid gridId="{{GridID}}1" id="{{GridID}}"
+                     [columnDefinitions]="_customcolumnDefinitions"
+                     [gridOptions]="_customgridOptions"
+                     gridWidth="{{_gridWidth}}"
+                     gridHeight="{{_gridHeight}}"
+                     (sgOnSelectedRowsChanged)="onSelectedRowsChanged($event)"
+                     (sgOnClick)="onCellClicked($event)"
+                     (onAngularGridCreated)="angularGridReady($event)">
+  </angular-slickgrid>
+</div>

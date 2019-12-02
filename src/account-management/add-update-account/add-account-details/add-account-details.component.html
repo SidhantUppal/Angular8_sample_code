@@ -1,0 +1,37 @@
+<form [formGroup]="this.formGroup" class="needs-validation " novalidate>
+        <formly-form [form]="this.formGroup" 
+                     [fields]="formFields" 
+                     [model]="glAccount" 
+        >
+                     <!-- (modelChange)="modelChange($event)"> -->
+        </formly-form>
+</form>
+
+<div class="row">
+    <div class="col-sm-3 " style="padding: 0;">
+       <h4>Bank Cards</h4>
+    </div>
+    <div class="col-sm-6 text-right" style="padding: 0;">
+        <button type="button" class="btn btn-primary cc-toolbar-btn" (click)="AddCard()">
+            <i class="fas fa-plus"></i> Card
+        </button>
+    </div>
+</div>
+
+<div *ngIf="glAccount.bankAccount?.bankAccountCards?.length > 0">
+    <div><h4></h4></div>
+    <div  *ngFor="let card of glAccount.bankAccount?.bankAccountCards" >
+        <app-bank-cards [BankCard] = "card"></app-bank-cards>
+    </div>
+</div>
+
+<!-- <div  class="col-sm-8 text-right">
+    <button type="button" (click)="Save()" class="btn btn-primary">Save</button>
+    <button type="button" class="btn btn-secondary" (click)="Cancel()">Cancel</button>      
+</div> -->
+
+<br><br><br>
+
+<div><h4>gl account details</h4>{{this.glAccount | json}}</div>
+<div><h4>selected account details</h4>{{this._selectedAccount | json}}</div>
+

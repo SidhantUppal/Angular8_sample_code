@@ -1,0 +1,51 @@
+<div class="container-fluid ">
+
+  <div class="row ig-banner-1">
+    <!--<div class="col-sm-3 ">
+      <img src="/assets/images/logo.svg" height="100px" />
+    </div>-->
+    <!--<div class="col-sm-5 ig-heading-4">| CFM</div>-->
+    <!--<div class="col-sm-4"> </div>-->
+
+  </div>
+
+  <div class="row ig-banner-2">
+
+
+    <div class="col-12">
+
+
+
+    </div>
+
+  </div>
+
+  <div class="row ">
+
+
+    <div class="container">
+
+      <div class="row ">
+
+        <div class="col-sm-2 no-pad fade-staggered" *ngFor="let item of AllowedItems;index as i">
+          <a class="row ig-btn-menu  " routerLink="{{item.url}}" routerLinkActive="active-link ">
+
+            <div class="col-12 " style=" text-align: center; font-size: 50px;">
+              <i [ngClass]="item.icon"></i>
+            </div>
+            <p class="col-12 ">
+              {{item.label}}
+            </p>
+
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+  </div>

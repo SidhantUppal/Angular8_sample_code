@@ -1,0 +1,47 @@
+<div class="form-group"
+     [ngClass]="{'has-error':showError}">
+  <Label for="AutoTextControlID" text="aaaaaaaaaaaaaaaa">
+    {{to.label}}
+  </Label>
+  <StackLayout class="stack-layout">
+    <Label text="Artist:" class="label" />
+    <au:RadAutoCompleteTextView items="{{ defaultValues }}" suggestMode="Append" displayMode="Token">
+      <au:RadAutoCompleteTextView.suggestionView>
+        <au:SuggestionView suggestionViewHeight="300">
+          <au:SuggestionView.suggestionItemTemplate>
+            <StackLayout>
+              <Label text="{{ text }}" />
+            </StackLayout>
+          </au:SuggestionView.suggestionItemTemplate>
+        </au:SuggestionView>
+      </au:RadAutoCompleteTextView.suggestionView>
+    </au:RadAutoCompleteTextView>
+  </StackLayout>
+
+
+
+  <TextField hint="Enter date"
+             [text]='birthDate | date:"MM/dd/yy"'
+             secure="false"
+            
+             returnKeyType="done"
+             autocorrect="false"
+             maxLength="10"
+             (textChange)="onTextChange($event)"
+             class="input input-border"></TextField>
+  {{defaultValues | json}}
+  <ListView [items]="defaultValues" class="list-group">
+
+    <ng-template let-item="item">
+      <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+             class="list-group-item"></Label>
+    </ng-template>
+  </ListView>
+
+
+  <div class="invalid-feedback"
+       *ngIf="showError">
+    {{field.validation.messages.required }}
+  </div>
+
+</div>

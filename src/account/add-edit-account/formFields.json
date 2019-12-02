@@ -1,0 +1,121 @@
+[
+    {
+        "fieldGroupClassName": "row",
+      "fieldGroup": [
+        {
+          "className": "col-sm-5",
+          "key": "gLAccountTypeID",
+          "type": "AutoText",
+          "templateOptions": {
+            "label": "Account Type1",
+            "autoTextCode": "AccountTypeForAdd",
+            "maxSelectedItems": 1,
+            "required": true
+          }
+        },
+        {
+          "className": "col-sm-5",
+          "key": "gLEntityID",
+          "type": "AutoText",
+          "templateOptions": {
+            "label": "Entity Type",
+            "maxSelectedItems": 1,
+            "required": true
+          }
+        },
+        {
+          "className": "col-sm-2 ig-checkbox-padding",
+          "key": "isActive",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "Is Active"
+          },
+          "hideExpression": "!model.glEntityRequirementMet"
+        }
+      ]
+    },
+  {
+    "fieldGroupClassName": "row",
+    "hideExpression": "!model.glEntityRequirementMet",
+    "fieldGroup": [
+      {
+        "className": "col-sm-5",
+        "key": "accountCode",
+        "type": "input",
+        "templateOptions": {
+          "label": "Account Code",
+          "required": true
+        }
+      },
+      {
+        "className": "col-sm-5",
+        "key": "accountName",
+        "type": "input",
+        "templateOptions": {
+          "label": "GL Account Name",
+          "required": true
+        }
+      },
+      {
+        "className": "col-sm-2 ig-checkbox-padding",
+        "key": "hasBankAccount",
+        "type": "checkbox",
+        "templateOptions": {
+          "label": "Has Bank Account"
+        },
+        "hideExpression": "!model.canHaveBankAccount"
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row",    
+    "hideExpression": "!model.glEntityRequirementMet || !model.hasBankAccount",
+    "fieldGroup": [
+      {
+        "className": "col-sm-5",
+        "key": "bankAccount.bSBDetailID",
+        "type": "AutoText",
+        "templateOptions": {
+          "label": "BSB",
+          "autoTextCode": "BSB",
+          "required": true,
+          "maxSelectedItems": 1
+        }
+      },
+ 
+      {
+        "className": "col-sm-5",
+        "key": "bankAccount.accountNumber",
+        "type": "input",
+        "templateOptions": {
+          "label": "Account No",
+          "type": "number",
+          "required": true
+        }
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row",
+    "hideExpression": "!model.glEntityRequirementMet || !model.hasBankAccount",
+    "fieldGroup": [
+      {
+        "className": "col-sm-5",
+        "key": "bankAccount.bsbDetail.bankName",
+        "type": "input",
+        "templateOptions": {
+          "label": "Bank Name"
+        }
+      },
+      {
+        "className": "col-sm-5",
+        "key": "bankAccount.accountName",
+        "type": "input",
+        "templateOptions": {
+          "label": "Bank Account Name",
+          "required": true
+        }
+      }      
+    ]
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "fieldGroupClassName": "row",
+    "fieldGroup": [
+      {
+        "className": "col-sm-2",
+        "key": "bankAccount.accountName",
+        "type": "input",
+        "templateOptions": {
+          "label": "Account Name",
+          "type": "text",
+          "required": true           
+        },
+        "validation": {
+            "messages": {
+                "required": "Please enter account name"
+            }
+        }
+      },
+      {
+        "className": "col-sm-3",
+        "key": "bankAccount.bsbDetailID",
+        "type": "AutoText",
+        "templateOptions": {
+          "label": "BSB",
+          "maxSelectedItems": 1,
+          "autoTextCode": "BSB",
+          "required": true       
+        },
+        "validation": {
+            "messages": {
+                "required": "Please enter BSB number"
+            }
+        }
+      },
+      {
+        "className": "col-sm-2",
+        "key": "bankAccount.accountNumber",
+        "type": "input",
+        "templateOptions": {
+          "label": "Account Number",         
+          "type": "text",
+          "minLength":6,
+          "required": true                 
+        },
+        "validation": {
+            "messages": {
+                "required": "Please enter account number",
+                "minlength": "Must be more than 5 numbers long"
+            }
+        }
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-sm-2",
+            "template": "PLEASE HAVE THIS TEXT HERE SO THAT EXPRESSION CAN WORK.... DO NOT CHANGE OR REMOVE THIS TEXT",
+            "key": "currentBalance"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+<div role="document" class="modal-dialog-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">{{title}}</h4>
+    </div>
+    <div class="modal-body">
+      <div class="row col-sm-12" *ngIf="MiddleMessage!=''">
+
+        <span [innerHtml]="MiddleMessage"></span>
+      </div>
+      <div class="row">
+        <div [class]="Options.leftCss"
+             *ngFor='let btn of LeftEmpty'></div>
+        <div [class]="Options.css"
+             *ngFor='let btn of Buttons'>
+          <button type="button" (click)="SelectAction(0,btn.Text)"
+                  [class]="'btn ' + btn.css">
+            {{btn.Text}}
+          </button>
+        </div>
+        <div ng-class="Options.rightCss"
+             *ngFor='let btn of RightEmpty'>
+        </div>
+      </div>
+
+    </div>
+    <div class="modal-footer">
+
+      <div [class]="Options.footerCSS"
+           *ngFor='let btn of FooterButtons'>
+        <button type="button" (click)="SelectAction(1,btn.Text)"
+                [class]="'btn ' + btn.css">
+          {{btn.Text}}
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+

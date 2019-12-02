@@ -1,0 +1,20 @@
+<ng-select class="form-filter" *ngIf="InternalSelectedObject!=null"
+           [items]="TextSearch$ | async"
+           bindLabel="displayValue"
+           [addTag]="false"
+           placeholder="{{PlaceHolder}}"
+           [selectOnTab]="true"
+           [hideSelected]="true"
+           [disabled]="disabled"
+           name="AutoText"
+           [multiple]="_AllowMultiple"
+           [maxSelectedItems]="_maxSelectedItems"
+           [loading]="TextSearchLoading"
+           [typeahead]="TextSearchinput$"
+           (change)="EmitEvent()"
+           [(ngModel)]="InternalSelectedObject">
+</ng-select>
+
+<span style="color: #dc3545;" *ngIf="!IsValid()">
+  {{RequiredMessage}}
+</span>

@@ -1,0 +1,60 @@
+[
+
+  {
+    "fieldGroupClassName": "row ig-formly-group",
+    "fieldGroup": [
+      {
+        "className": "col-sm-5",
+        "key": "administrator",
+        "type": "AutoText",
+        "templateOptions": {
+          "label": "Administrator",
+          "maxSelectedItems": 1,
+          "autoTextCode": "FinAdministratorGlEntity"
+        },
+        "hideExpression": "!model.showFilters || !model.showAdministrator"
+      },
+      {
+        "className": "col-sm-5",
+        "key": "account",
+        "type": "AutoText",
+        "templateOptions": {
+          "label": "Account",
+          "maxSelectedItems": 1,
+          "autoTextCode": "Account"
+        },
+        "hideExpression": "!model.showFilters"
+      },
+      {
+        "className": "col-sm-5",
+        "key": "accountType",
+        "type": "AutoText",
+        "templateOptions": {
+          "label": "Account Type",
+          "maxSelectedItems": 1,
+          "autoTextCode": "AccountType"
+        },
+        "hideExpression": "!model.showFilters"        
+      },
+      {
+        "className": "col-sm-3 ig-checkbox-padding",
+        "key": "highBalanceOnly",
+        "type": "checkbox",
+        "templateOptions": {
+          "label": "High Balance Only"
+        },
+        "hideExpression": "!model.showFilters || !model.showHighBalance"
+      },
+      {
+        "className": "col-sm-2 ig-checkbox-padding",
+        "key": "showInactive",
+        "type": "checkbox",
+        "templateOptions": {
+          "label": "Show Inactive",
+          "required": false
+        },
+        "hideExpression": "!model.showFilters"
+      }    
+    ]
+  }
+]

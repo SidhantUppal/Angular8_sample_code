@@ -1,0 +1,27 @@
+[
+    {
+        "fieldGroupClassName": "row ig-formly-group",
+        "fieldGroup": [
+            {
+                "className": "col-sm-6",
+                "key": "home",
+                "type": "AutoText",
+                "templateOptions": {
+                    "label": "Home",
+                    "maxSelectedItems": 1,
+                    "placeholder": "Select Home",
+                    "autoTextCode": "Home"
+                }
+            },
+            {
+                "className": "col-sm-6 ig-checkbox-padding",
+                "key": "showInactive",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Show Inactive",
+                    "required": false
+                }
+            }
+        ]
+    }
+]

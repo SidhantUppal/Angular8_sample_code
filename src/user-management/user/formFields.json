@@ -1,0 +1,28 @@
+[
+    {
+        "fieldGroupClassName": "row ig-formly-group",
+        "fieldGroup": [
+            {
+                "className": "col-sm-6",
+                "key": "applicationUser",
+                "type": "AutoText",
+                "templateOptions": {
+                    "label": "Application User",
+                    "maxSelectedItems": 1,
+                    "placeholder": "Search Application User",
+                    "autoTextCode": "ApplicationUser",
+                    "donotloaddefault": false
+                }
+            },
+            {
+                "className": "col-sm-6",
+                "key": "showUsersForSelectedRole",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Show Users For Selected Role",
+                    "required": false                     
+              }        
+            }   
+        ]
+    }
+]

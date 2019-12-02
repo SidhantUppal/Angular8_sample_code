@@ -1,0 +1,76 @@
+<div class="container-fluid" style=" padding:0;">
+
+  <div class="row ig-toolbar">
+
+
+    <div class="col-sm-1 " style="padding: 0;">
+      <p class="cc-section-title">ROLES</p>
+    </div>
+
+    <div class="col-sm-1 text-left" style="padding: 0;">
+      <button type="button" class="btn btn-primary cc-toolbar-btn" (click)="AddRole(null, true)">
+        <i class="fas fa-plus"></i> Role
+      </button>
+    </div>
+
+
+  </div>
+
+  <div class="container">
+    <div class='row'>
+      <div class="col-sm-12">
+        <div class="ig-card">
+          <form [formGroup]="this.formGroup" class="needs-validation " novalidate>
+            <formly-form [form]="this.formGroup"
+                         [fields]="formFields"
+                         [model]="formModel"
+                         (modelChange)="modelChange($event)">
+            </formly-form>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- <div class="container-fluid"> -->
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="ig-card ig-grid">
+          <app-grid [ColumnDefinitions]="columnDefinitions"
+                    [GridOptions]="gridOptions"  
+                    [DataSource]="dataSource"
+                    [GridParams]="gridParams"
+                    [GridHeight]="346"
+                    (onCellClicked)="onCellClicked($event)">
+          </app-grid>
+        </div>
+      </div>
+
+
+
+      <div class="col-sm-6">
+        <div class="ig-card ig-grid" style="padding: 0;" *ngIf="SelectedRole!=null">
+          <app-role-data-access [(CurrentSearchParams)]="CurrentSearchParams"></app-role-data-access>
+        </div>
+
+        <div class="ig-card ig-grid" style="padding: 0;" *ngIf="SelectedRole==null">
+          <div style="height:316px; padding-top: 80px !important;" class="  ig-section">
+            <h5 class="text-center">  <i class="fas fa-arrow-left"></i> <br /> Select Role from Grid <br /> for Client/Home Access Details </h5>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <app-user [SelectedRole]="SelectedRole"></app-user>
+
+
+
+</div>

@@ -1,0 +1,27 @@
+[
+    {
+      "fieldGroupClassName": "row",
+      "fieldGroup": [
+        {
+          "className": "col-sm-6 ig-formly-group",
+          "key": "applicationRole",
+          "type": "AutoText",
+          "templateOptions": {
+            "label": "Application Role",
+            "maxSelectedItems": 1,
+            "placeholder": "Search Application Role",
+            "autoTextCode": "ApplicationRole",
+            "donotloaddefault": false
+          }
+        },
+        {
+          "className": "col-sm-6 ig-formly-group ig-checkbox-padding ig-btn-checkbox",
+          "key": "showInactive",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "Show Inactive",
+            "required": false
+          }
+        }          
+      ]}
+    ]

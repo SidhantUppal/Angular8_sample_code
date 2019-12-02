@@ -1,0 +1,50 @@
+[
+    {
+      "fieldGroupClassName": "row",
+      "fieldGroup": [
+        {
+          "className": "col-sm-5",
+          "key": "applicationRoleName",
+          "type": "input",
+          "templateOptions": {
+            "label": "Application Role Name",
+            "required": true
+          }
+        },
+        {
+          "className": "col-sm-12",
+          "key": "systemRole",
+          "type": "AutoText",
+          "templateOptions": {
+            "label": "System Role",
+            "required": true,
+            "maxSelectedItems": 1,
+            "autoTextCode": "InternalSystemRole"
+          }  
+        },
+        {
+          "className": "col-sm-2",
+          "key": "isActive",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "Is Active"
+          }
+        }
+      ]
+    },
+    {
+      "fieldGroupClassName": "row",
+      "fieldGroup": [
+        {
+          "className": "col-sm-12",
+          "key": "access",
+          "type": "Access",
+          "templateOptions": {
+            "required": false
+          },
+          "validation": {
+          }          
+        }
+      ]
+    }
+  ]

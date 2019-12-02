@@ -1,0 +1,28 @@
+[
+  {
+    "fieldGroupClassName": "row",
+    "fieldGroup": [
+      {
+        "className": "col-sm-6",
+        "key": "account",
+        "type": "AutoText",
+        "templateOptions": {
+          "maxSelectedItems": 1,
+          "placeholder": "Select Account",
+          "autoTextCode": "Account"
+        }
+      },
+      {
+        "className": "col-sm-6",
+        "key": "accountType",
+        "type": "AutoText",
+        "templateOptions": {
+          "maxSelectedItems": 1,
+          
+          "placeholder": "Select Account Type",
+          "autoTextCode": "AccountType"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,137 @@
+[
+    {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+            {
+                "className": "col-sm-6",
+                "key": "homeCostCentreID",
+                "type": "AutoText",
+                "templateOptions": {
+                    "label": "Home Cost Centre",
+                    "maxSelectedItems": 1,
+                    "placeholder": "Select Home Cost Centre",
+                    "autoTextCode": "HomeCostCentre",
+                    "required": true
+                }
+            },
+            {
+                "className": "col-sm-6 ig-checkbox-padding",
+                "key": "isActive",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Is Active",
+                    "required": false
+                }
+            },
+            {
+                "className": "col-sm-6",
+                "key": "numberOfVacancies",
+                "template": "PLEASE HAVE THIS TEXT HERE SO THAT EXPRESSION CAN WORK.... DO NOT CHANGE OR REMOVE THIS TEXT"                
+            }
+        ]
+    },
+    {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+            {
+                "className": "col-sm-6",
+                "key": "homeName",
+                "type": "input",
+                "templateOptions": {
+                    "label": "Home Description",
+                    "placeholder": "Enter Home Description",
+                    "required": true
+                },
+                "validation": {
+                    "messages": {
+                        "required": "Please enter home description"
+                    }
+                }
+            },
+            {
+                "className": "col-sm-6",
+                "key": "parcel",
+                "type": "input",
+                "templateOptions": {
+                    "label": "Parcel",
+                    "type": "number",
+                    "required": false
+                }
+            }
+        ]
+    },
+    {
+        "fieldGroupClassName": "row",
+        "key": "beds",
+        "fieldGroup": [
+            {
+                "className": "col-sm-6",
+                "key": "targetBeds",
+                "type": "input",
+                "templateOptions": {
+                    "type": "number",
+                    "label": "SIL Target Beds for residents",
+                    "placeholder": "Enter SIL Target Beds",
+                    "required": true
+                },
+                "validation": {
+                    "messages": {
+                        "required": "Please enter SIL Target Beds for residents"
+                    }
+                }
+            },
+            {
+                "className": "col-sm-6",
+                "key": "bedsInHome",
+                "type": "input",
+                "templateOptions": {
+                    "type": "number",
+                    "label": "Beds in Home",
+                    "required": true
+                },                
+                "validation": {
+                    "messages": {
+                        "required": "Please enter Beds in Home"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+            {
+                "className": "col-sm-6",
+                "key": "accommodationTypeID",
+                "type": "AutoText",
+                "templateOptions": {
+                    "label": "Accomodation Type",
+                    "maxSelectedItems": 1,
+                    "placeholder": "Select Accomodation Type",
+                    "autoTextCode": "AccomodationType"
+                }
+            },
+            {
+                "className": "col-sm-6 ig-checkbox-padding",
+                "key": "gstApplicable",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "GST Applicable"
+                }
+            }
+        ]
+    },
+    {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+            {
+                "className": "col-sm-6",
+                "key": "address",
+                "type": "Address",
+                "templateOptions": {
+                    "required": false
+                }
+            }
+        ]
+    }
+] 

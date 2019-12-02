@@ -1,0 +1,55 @@
+
+<div class="container-fluid">
+  <div class="row ig-toolbar">
+    <div class="col-sm-2 " style="padding: 0;">
+      <p class="cc-section-title">HOME MAINTENANCE</p>
+    </div>
+    <!-- <div class="col-sm-1" style="padding: 0;">
+        <button type="button" class="btn btn-primary cc-toolbar-btn" (click)="AddEditHome(null, true)">
+            <i class="fas fa-plus"></i> Home
+        </button>
+    </div> -->
+
+
+
+
+  </div>
+
+</div>
+
+<div class="container">
+
+
+
+  <div class='row'>
+    <div class="col-sm-12">
+      <div class="ig-card">
+        <div class="col-sm-12">
+          <form [formGroup]="this.formGroup" class="needs-validation " novalidate>
+            <formly-form [form]="this.formGroup"
+                         [fields]="formFields"
+                         [model]="formModel"
+                         (modelChange)="modelChange($event)">
+            </formly-form>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class="col-sm-12">
+      <div class="ig-card">
+        <div class="col-sm-12">
+          <app-grid [ColumnDefinitions]="columnDefinitions"
+                    [GridOptions]="gridOptions"
+                    [GridSettings]="gridSettings"
+                    [DataSource]="dataSource"
+                    [GridParams]="gridParams"
+                    (onCellClicked)="onCellClicked($event)">
+          </app-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

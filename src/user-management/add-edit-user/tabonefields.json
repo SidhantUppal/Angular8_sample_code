@@ -1,0 +1,262 @@
+[
+  {
+    "fieldGroupClassName": "row active-row",
+    "fieldGroup": [
+      {
+        "className": "col-sm-12 ig-form-checkbox",
+        "key": "isActive",
+        "type": "checkbox",
+        "templateOptions": {
+          "label": "Account Active"
+        }
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row ",
+    "fieldGroup": [
+      {
+        "className": "col-sm-12 ig-heading-3",
+        "template": "Login Details"
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row ig-form-card",
+    "fieldGroup": [
+      
+      {
+        "className": "col-sm-6 ig-formly-group",
+        "key": "loginName",
+        "type": "input",
+        "templateOptions": {
+          "label": "Login Name",
+          "required": true
+        }
+      },
+      {
+        "className": "col-sm-6 ig-formly-group",
+        "key": "emailAddress",
+        "type": "input",
+        "templateOptions": {
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        "validators": {
+          "validation": [ "emailValidation" ]
+
+        }
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row ig-form-card",
+    "fieldGroup": [
+      {
+        "className": "col-sm-6",
+        "key": "resetPassword",
+        "type": "checkbox",
+        "templateOptions": {
+          "label": "Reset Password"
+
+        },
+        "hideExpression": "model.isAdd"
+      },
+      {
+        "className": "col-sm-6 ig-formly-group",
+        "key": "sendPasswordReset",
+        "type": "button",
+        "templateOptions": {
+
+          "text": "Send Password Reset Email",
+          "btnType": "info"
+        },
+        "hideExpression": "model.isAdd"
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row ig-form-card-top",
+    "fieldGroup": [
+      {
+        "className": "col-sm-6 ig-formly-group",
+        "key": "password",
+        "type": "input",
+        "templateOptions": {
+          "label": "Password",
+          "type": "password",
+          "required": true
+
+        },
+        "hideExpression": "!model.isAdd && !model.resetPassword"
+
+
+
+      },
+      {
+        "key": "confirmPassword",
+        "className": "col-sm-6 ig-formly-group",
+        "type": "input",
+        "templateOptions": {
+          "type": "password",
+          "label": "Confirm Password",
+          "placeholder": "Please re-enter your password",
+          "required": true
+        },
+        "validation": { "messages": { "required": "Please enter Confirm Password" } },
+
+
+        "hideExpression": "!model.isAdd && !model.resetPassword"
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row ig-form-card-bot",
+    "fieldGroup": [
+      {
+        "className": "col-sm-6 text-center",
+        "key": "mustChangePassword",
+        "type": "checkbox",
+        "templateOptions": {
+          "label": "User must change password on login",
+
+          "placeholder": "Enter User must change password on login"
+        },
+        "hideExpression": "!model.isAdd && !model.resetPassword"
+
+
+
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row ",
+    "fieldGroup": [
+      {
+        "className": "col-sm-12 ig-heading-3",
+        "template": "Delivery Options"
+      }
+    ]
+  },
+
+  {
+    "fieldGroupClassName": "row ig-form-card",
+    "fieldGroup": [
+      {
+        "className": "col-sm-6 ig-formly-group ig-form-autotext",
+        "key": "statementDeliveryOptionID",
+        "type": "AutoText",
+        "templateOptions": {
+          "label": "Statement Delivery option",
+          "maxSelectedItems": 1,
+          "autoTextCode": "StatementDeliveryOption",
+          "required": true
+        },
+        "validation": { "messages": { "required": "Please select Statement Delivery Option" } }
+
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row ",
+    "fieldGroup": [
+      {
+        "className": "col-sm-12 ig-heading-3",
+        "template": "User Infomation"
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row ig-form-card-top",
+    "fieldGroup": [
+      {
+        "className": "col-sm-6 ig-formly-group",
+        "key": "firstName",
+        "type": "input",
+        "templateOptions": {
+          "label": "First Name",
+          "required": true
+        }
+
+      },
+      {
+        "className": "col-sm-6 ig-formly-group",
+        "key": "lastName",
+        "type": "input",
+        "templateOptions": {
+          "label": "Last Name",
+          "required": true
+        }
+
+
+
+
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row ig-form-card-bot",
+    "fieldGroup": [
+      {
+        "className": "col-sm-6 ig-formly-group",
+        "key": "mobilePhone",
+        "type": "input",
+        "templateOptions": {
+          "label": "Mobile",
+          "type": "number"
+        }
+
+
+
+      },
+      {
+        "className": "col-sm-6 ig-formly-group",
+        "key": "workPhone",
+        "type": "input",
+        "templateOptions": {
+          "label": "Work No",
+          "type": "number"
+        }
+
+
+
+      }
+    ]
+  },
+
+  {
+    "fieldGroupClassName": "row ",
+    "fieldGroup": [
+      {
+        "className": "col-sm-12 ig-heading-3",
+        "template": "Physical Address"
+      },
+      {
+        "className": "col-sm-12 ig-formly-group",
+        "key": "physicalAddress",
+        "type": "Address"
+
+      },
+      {
+        "className": "col-sm-6 ig-heading-3",
+        "template": "Postal Address"
+      },
+      {
+        "className": "col-sm-6 ",
+        "key": "sameAsPhysicalAddress",
+        "type": "checkbox",
+        "templateOptions": {
+          "label": "Same As Physical Address",
+          "required": false
+        }
+      },
+      {
+        "className": "col-sm-12 ig-formly-group",
+        "key": "postalAddress",
+        "type": "Address"
+
+      }
+    ]
+  }
+]

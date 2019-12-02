@@ -1,0 +1,58 @@
+<div class="container-fluid menu-body  ig-background-coloured-3" style="height: 100vh;">
+  <div class="row ">
+
+    <div class="col-md-4"> </div>
+
+    <div class="col-md-4 ig-card" style="margin-top:30vh !important; ">
+
+      <div class="row ">
+        <div class="col-md-2"> </div>
+        <div class="col-md-8 login-container">
+
+          <form [formGroup]="this.formGroup" class="needs-validation " novalidate
+                (validSubmit)="this.Login()">
+            <div class="form-row" *ngIf="ErrorMessage!='' && !formModel.ForgotPasswordVisible">
+
+              <div class="col-md-12 form-group">
+                <span class="invalid-feedback" style="display: block !important;">{{ErrorMessage}}</span>
+
+
+              </div>
+            </div>
+            <formly-form [form]="this.formGroup" [fields]="formFields" [model]="formModel"></formly-form>
+            <button  
+              class="btn btn-primary cta-login-btn-main"  *ngIf="!formModel.ForgotPasswordVisible"
+              type="submit">
+              Login
+            </button>
+            <button class="btn btn-primary cta-login-btn-second" type="button"
+                    *ngIf="!formModel.ForgotPasswordVisible"
+                    (click)="ShowForgotPasswordPanel(true)">
+              Forgot Password
+            </button>
+
+            
+            <button class="btn btn-primary " type="button"
+                    *ngIf="formModel.ForgotPasswordVisible"
+                    (click)="ShowForgotPasswordPanel(false)">
+              Back
+            </button>
+            &nbsp;
+            <button *ngIf="formModel.ForgotPasswordVisible"
+                    class="btn btn-primary" type="submit">
+              Reset Password
+            </button>
+
+          </form>
+        </div>
+        <div class="col-md-2"> </div>
+
+
+      </div>
+    </div>
+
+    <div class="col-md-4"> </div>
+
+  </div>
+
+</div>

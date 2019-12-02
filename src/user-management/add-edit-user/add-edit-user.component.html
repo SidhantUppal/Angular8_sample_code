@@ -1,0 +1,44 @@
+<div role="document" class="modal-dialog-md">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">{{title}}</h4>
+    </div>
+    <div class="modal-body" style="background-color: whitesmoke;">
+
+      <form [formGroup]="this.formGroup" class="needs-validation "
+            *ngIf="UIReady"
+            novalidate>
+
+        <div class="form-row" *ngIf="ErrorMessage!='' && !ResetPasswordVisible">
+
+          <div class="col-md-12 form-group">
+            <span class="invalid-feedback" style="display: block !important;">{{ErrorMessage}}</span>
+
+
+          </div>
+        </div>
+        <tabset #tabset>
+          <tab *ngFor="let tab1 of tabs;let index = index;"
+               (selectTab)="tab1.active = true"
+               (deselect)="tab1.active = false"
+               [heading]="tab1.heading">
+
+            <formly-form [form]="this.formGroup.at(index)" [fields]="tab1.fields"
+                         (modelChange)="changeModel($event)"
+                         [model]="formModel" [options]="options[index]"></formly-form>
+           
+
+          </tab>
+        </tabset> 
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="activeModal.close(null)">
+        Cancel
+      </button>
+      <button type="button" (click)="Save()" class="btn btn-primary">
+        Save
+      </button>
+    </div>
+  </div>
+</div>

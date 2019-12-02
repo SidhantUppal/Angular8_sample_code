@@ -1,0 +1,83 @@
+[
+  {
+    "fieldGroupClassName": "row ig-form-card",
+    "fieldGroup": [
+      {
+        "className": "col-sm-4",
+        "key": "cardNumber",
+        "type": "input",
+        "templateOptions": {
+          "label": "Card Number",
+          "type": "text",
+          "required": true,
+          "minLength":5
+              
+        },
+        "validation": {
+            "messages": {
+                "required": "Please enter card number",
+                "minlength": "Must be more than 5 numbers long"
+            }
+        }
+      },
+      {
+        "className": "col-sm-4",
+        "key": "expDate",
+        "type": "input",
+        "templateOptions": {
+          "label": "Expiry Date",
+          "type": "month",
+          "required": true          
+        },
+        "validation": {
+            "messages": {
+                "required": "Please enter expiry date"
+            }
+        }
+      },
+            
+      {
+        "className": "col-sm-4",
+        "key": "heldByStaffID",
+        "type": "AutoText",
+        "templateOptions": {
+            "label": "Held By",
+            "maxSelectedItems": 1,            
+            "autoTextCode": "InternalUsers"
+        }
+      },
+      {
+        "className": "col-sm-4",
+        "key": "heldFrom",
+        "type": "input",
+        "templateOptions": {
+          "label": "From",
+          "type": "date",
+          "required": true
+        },
+        "validation": {
+            "messages": {
+                "required": "Please enter date"
+            }
+        }
+      },
+      {
+        "className": "col-sm-4",
+        "key": "heldTo",
+        "type": "input",
+        "templateOptions": {
+          "label": "To",
+          "type": "date"
+        }
+      },
+      {
+        "className": "col-sm-3",        
+        "key": "remove",
+        "type": "button",
+        "templateOptions": {
+          "btnType": "removeIcon"              
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+<div role="document" class="modal-dialog-md">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">{{title}}</h4>
+        </div>
+        <div class="modal-body" style="background-color: whitesmoke;">
+
+          <form [formGroup]="this.formGroup" class="needs-validation " *ngIf="UIReady" novalidate>
+
+            <!-- <div class="form-row" *ngIf="ErrorMessage!=''">
+
+      <div class="col-md-12 form-group">
+          <span class="invalid-feedback" style="display: block !important;">{{ErrorMessage}}</span>
+
+
+      </div>
+  </div> -->
+            
+            <formly-form [form]="this.formGroup" [fields]="formFields" (modelChange)="modelChange($event)"
+                         [model]="existingData"></formly-form>
+          </form>
+            <div class="row cc-toolbar" style=" margin-left:-15px; margin-right:-15px;  margin-top:30px;"
+                *ngIf="canHaveBankCards && existingData.gLEntityID && existingData.gLEntityID.length > 0 && existingData?.hasBankAccount">
+                <div class="col-sm-2 " style="padding: 0;">
+                    <p class="cc-section-title">Bank Cards</p>
+                </div>
+                <div class="col-sm-10 text-right">
+                    <button type="button" class="btn btn-primary cc-toolbar-btn" (click)="AddCard()">
+                        <i class="fas fa-plus"></i> Card
+                    </button>
+                </div>
+            </div>
+
+            <div *ngIf="existingData?.bankAccount?.bankAccountCards?.length > 0 && existingData?.hasBankAccount">
+                <div>
+                    <h4></h4>
+                </div>
+                <div *ngFor="let card of existingData?.bankAccount?.bankAccountCards">
+                    <app-bank-cards *ngIf="card.isActive" [BankCard]="card" (OnBankCardRemoved)="OnBankCardRemoved($event)"></app-bank-cards>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="activeModal.close(null)">
+                Cancel
+            </button>
+            <button type="button" (click)="Save()" class="btn btn-primary">
+                Save
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="form-group"
+     [ngClass]="{'has-error':showError}">
+  <label for="AutoTextControlID">
+    {{to.label}}
+  </label>
+
+  {{this.to.ForcedItems | json}}
+  <ng-select [items]="TextSearch$ | async"
+             bindLabel="displayValue"
+             [addTag]="false"
+             [selectOnTab]="true"
+             [hideSelected]="true"
+             [ngClass]="{'is-invalid':showError}"
+             [formControl]="formControl"
+             (focus)="TextBoxFocussed()"
+             name="AutoTextControlID"
+             [multiple]="true"
+             [maxSelectedItems]="to.maxSelectedItems"
+             [formlyAttributes]="field"
+             [loading]="TextSearchLoading"
+             [typeahead]="TextSearchinput$"
+             [placeholder]="to.placeholder">
+  </ng-select>
+
+  <div class="invalid-feedback"
+       *ngIf="showError">
+
+    <formly-validation-message [field]="field"></formly-validation-message>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+[
+  {
+    "fieldGroupClassName": "row",
+    "fieldGroup": [
+      {
+        "className": "col-sm-2",
+        "key": "accountCode",
+        "type": "input",
+        "templateOptions": {
+          "label": "Account Code",
+          "type": "text",
+          "required": true           
+        },
+        "validation": {
+            "messages": {
+                "required": "Please enter account code"
+            }
+        }
+      },
+      {
+        "className": "col-sm-3",
+        "key": "accountName",
+        "type": "input",
+        "templateOptions": {
+          "label": "Account Name",
+          "type": "text",
+          "required": true           
+        },
+        "validation": {
+            "messages": {
+                "required": "Please enter acccount name"
+            }
+        }
+      },
+      {
+        "className": "col-sm-2",
+        "key": "gLAccountTypeID",
+        "type": "AutoText",
+        "templateOptions": {
+          "label": "Account Type",
+          "maxSelectedItems": 1,
+          "autoTextCode": "AccountType"          
+        }
+      },
+      {
+        "className": "col-sm-3",
+        "key": "gLEntityID",
+        "type": "AutoText",
+        "templateOptions": {
+          "label": "Entity Type",
+          "maxSelectedItems": 1       
+        }
+      },
+      {
+        "className": "col-sm-1",
+        "key": "hasBank",
+        "type": "checkbox",
+        "templateOptions": {
+          "label": "Has Bank Account?"           
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+            {
+                "className": "col-sm-6",
+                "key": "accountCode",
+                "type": "input",
+                "templateOptions": {
+                    "label": "Account Code",
+                    "required": true
+                }
+            },
+            {
+                "className": "col-sm-2 ig-checkbox-padding",
+                "key": "isActive",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Is Active"
+                }
+            }
+        ]
+    },
+    {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+            {
+                "className": "col-sm-6",
+                "key": "accountType",
+                "type": "input",
+                "templateOptions": {
+                    "label": "Account Type",
+                    "disabled": true
+                }
+            },
+            {
+                "className": "col-sm-6",
+                "key": "accountName",
+                "type": "input",
+                "templateOptions": {
+                    "label": "Account Name",
+                    "required": true
+                }
+            }
+        ]
+    },
+    {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+            {
+                "className": "col-sm-6",
+                "key": "bSBDetailID",
+                "type": "AutoText",
+                "templateOptions": {
+                    "label": "BSB",
+                    "autoTextCode": "BSB",
+                    "required": true,
+                    "maxSelectedItems": 1
+                }
+            },
+            {
+                "className": "col-sm-6",
+                "key": "bankName",
+                "type": "input",
+                "templateOptions": {
+                    "label": "Bank Name"
+                }
+            }
+        ]
+    },
+    {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+            {
+                "className": "col-sm-6",
+                "key": "accountNumber",
+                "type": "input",
+                "templateOptions": {
+                    "label": "Account No",
+                    "type": "number",
+                    "required": true
+                }
+            }
+        ]
+    }
+]

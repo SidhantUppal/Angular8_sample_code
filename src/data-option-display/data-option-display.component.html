@@ -1,0 +1,8 @@
+<select  [(ngModel)]="SelectedValue"
+         (change)="Changed()"
+         class="form-control" name="period"
+         [disabled]="disabled">
+  <option *ngFor="let bu of DataOptions" value={{bu.DataOptionID}}>
+    {{bu.DisplayValue}}
+  </option>
+</select>

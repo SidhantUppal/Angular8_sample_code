@@ -1,0 +1,13 @@
+<div class="gridwidth" id="{{GridWrap}}">
+    <angular-slickgrid gridId="{{GridID}}1" 
+                       id="{{GridID}}" 
+                       [columnDefinitions]="ColumnDefinitions"
+                       [gridOptions]="GridOptions" 
+                       [gridWidth] ="GridSettings.gridWidth" 
+                       [gridHeight]="GridSettings.gridHeight"                       
+                       (sgOnClick)="sgOnCellClicked($event)"
+                       (onAngularGridCreated)="sgOnAngularGridCreated($event)"
+                       (sgOnBeforeEditCell)="sgOnBeforeEditCell($event)"
+                       (sgOnSelectedRowChanged)="sgOnSelectedRowChanged($event)">
+    </angular-slickgrid>
+  </div>

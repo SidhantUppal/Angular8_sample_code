@@ -1,0 +1,12 @@
+<div class="row cc-row-override">
+    <div class="col-sm-12 fade-d0" style="padding: 0; ">
+            <label style="display: block; text-align: center;line-height: 150%;font-size: 1em;" *ngIf="StatementSummary != null" >Opening Balance:{{ StatementSummary.statementStartDate }} - ${{ StatementSummary.openingBalance }} </label>
+        <app-grid [ColumnDefinitions]="columnDefinitions" 
+                  [GridOptions]="gridOptions"
+                  [GridSettings]="gridSettings" 
+                  [DataSource]="dataSource" 
+                  [GridParams]="gridParams">
+        </app-grid>
+        <label style="display: block; text-align: center;line-height: 150%;font-size: 1em;" *ngIf="StatementSummary != null">Closing Balance:{{ StatementSummary.statementEndDate }} - ${{ StatementSummary.closingBalance }}</label>
+    </div>
+</div>

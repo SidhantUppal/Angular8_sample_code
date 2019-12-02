@@ -1,0 +1,12 @@
+<StackLayout class="form" sdkExampleTitle sdkToggleNavButton>
+
+
+  <Label text="{{AllowedItems | json}}" ></Label>
+  <ListView [items]="AllowedItems" class="list-group">
+    <ng-template let-item="item">
+      <Label [nsRouterLink]="[item.url]" [text]="item.label"
+             class="list-group-item"></Label>
+    </ng-template>
+  </ListView>
+
+</StackLayout>
